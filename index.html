@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CHATU - The best place to chat with your friends</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>CHATU!!</title>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1>CHATU</h1>
-        <p class="subtitle">The best place to chat with your friends</p>
-        <p id="currentRoom">Currently in chat: <span>Lobby</span></p>
-        <p id="wsStatus">Connected to websockets: <span>Disconnected</span></p>
-      </header>
-
-      <div class="room-controls">
-        <input type="text" id="roomInput" placeholder="Enter chatroom name">
-        <button id="changeRoom">Change chatroom</button>
-      </div>
-
-      <div class="username-controls">
-        <input type="text" id="usernameInput" placeholder="Enter your username">
-      </div>
-
-      <div class="chat-container">
-        <div id="messageArea"></div>
-        <div class="message-input">
-          <input type="text" id="messageInput" placeholder="Type your message...">
-          <button id="sendMessage">Send</button>
-        </div>
+    <div class="center">
+      <h1>CHATU A BEST PLACE CHAT TO WITH YOUR FRIENDS</h1>
+      <h3 id="chat-header">currently in chat : general</h3>
+      <h3 id="connection-header">Connected to websockets:</h3>
+      <form id="chatroom-selection">
+        <label for="chatroom">Chatroom:</label>
+        <input type="text" id="chatroom" name="chatroom" /><br /><br />
+        <input type="submit" value="Change chatroom" />
+      </form>
+      <br />
+      <textarea
+        class="messagearea"
+        id="chatmessages"
+        readonly
+        name="chatmessages"
+        rows="4"
+        cols="50"
+        placeholder="Welcome to chatroom"
+      ></textarea>
+      <br />
+      <form id="chatroom-message">
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message" /><br /><br />
+        <input type="submit" value="Send message" />
+      </form>
+      <div id="login-section">
+        <form id="login-form">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username"><br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password"><br><br>
+          <input type="submit" value="Login">
+        </form>
       </div>
     </div>
+    <script src="chat.js"></script>
   </body>
 </html>
